@@ -1,6 +1,6 @@
 # Action Plan / Tracker
 
-- [ ] Clarify func / non-func requirements, brainstorm MVP solution as well as potential future Features
+- [x] Clarify func / non-func requirements, brainstorm MVP solution as well as potential future Features
 - [ ] Outline Strategy
     - [ ] Design Patterns
     - [ ] Outline basic models / objects, Data Storage and retrieval
