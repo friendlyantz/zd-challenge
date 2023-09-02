@@ -4,5 +4,5 @@ Style/Documentation:
 AllCops:
   NewCops: enable
   Exclude:
-    - 'db/*.json'
+    - 'db/*'
     - 'spec/spec_helper.rb'
