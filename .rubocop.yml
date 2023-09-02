@@ -1,2 +1,8 @@
 Style/Documentation:
   Enabled: false
+
+AllCops:
+  NewCops: enable
+  Exclude:
+    - 'db/*.json'
+    - 'spec/spec_helper.rb'

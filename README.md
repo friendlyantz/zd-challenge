@@ -57,6 +57,12 @@ Inspired by [what makes a good CLI tool](https://friendlyantz.me/learning/2023-0
 - tickets HAS ALL foreign keys to USERS and ORGS: `submitter_id`, `assignee_id`, `organization_id`
 - organizations HAS NO foreign keys to its tickets and users
 
+## Schema
+
+![image](https://github.com/friendlyantz/zendesk-challenge/assets/70934030/c680cce2-0155-465c-94f6-328de52b01e4)
+https://dbdiagram.io/d/64f2c16402bd1c4a5ed6532a
+
+
 ## Design and Strategy discussion
 
 Since we handle data pipelines/queries, functional flavoured approach might work well. Haskel / Rust Monads might be the best fit Haskel / Rust Monads might be the best fit.
