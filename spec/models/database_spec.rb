@@ -41,7 +41,8 @@ describe Models::Database do
   describe 'index and search' do
     describe '#search_index' do
       it 'returns the value or an empty array when provided record does not exist' do
-        db = described_class.new(some_object: { 'index' => { 'some_key_for_trie' => { 'some_other_key_trie' => [777] } } })
+        db = described_class
+             .new(some_object: { 'index' => { 'some_key_for_trie' => { 'some_other_key_trie' => [777] } } })
         expect(db.search_index(record: :some_object, paths: %w[some_key_for_trie some_other_key_trie])).to eq [777]
         expect(db.search_index(record: :some_object, paths: ['is_admin', false])).to eq []
         expect(db.search_index(record: :non_existent, paths: %w[some_key_for_trie some_other_key_trie])).to eq []

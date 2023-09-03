@@ -4,6 +4,12 @@ Style/Documentation:
 Metrics/BlockLength:
   Enabled: false
 
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Metrics/MethodLength:
+  Max: 12
+
 AllCops:
   NewCops: enable
   Exclude:

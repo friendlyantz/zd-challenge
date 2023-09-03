@@ -90,6 +90,7 @@ https://refactoring.guru/design-patterns
     - https://refactoring.guru/design-patterns/decorator
 - Factory Pattern for generating Models?
     - https://refactoring.guru/design-patterns/factory-method
+- Repository Pattern to act as a middleware between DB Data and search engine?
 
 # SearchEngine performance: O(n) vs O(logn) vs O(1)
 
@@ -108,3 +109,4 @@ or `URL`
 
 - Zeitwerk autoloader - works well with normal Ruby and supports dry-rb [since late 2022](https://dry-rb.org/news/2022/10/17/dry-rb-adopts-zeitwerk-for-code-loading/)
 
+- Dry Monads and TXNs
