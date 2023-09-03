@@ -3,11 +3,11 @@
 - [x] Clarify functional / non-functional requirements, brainstorm MVP solution as well as potential future Features
 - [x] Outline Strategy
     - [x] Design Patterns
-    - [ ] Outline basic models / objects, Data Storage and retrieval
+    - [x] Outline basic models / objects, Data Storage and retrieval
     - [x] Consider O(n) vs O(logn) vs O(1) implementations of Search algorithm
     - [x] Consider Data Indexing algorithms
 - [x] Spike
-- [ ] Implement/TDD data models and storage
+- [x] Implement/TDD data models and storage
 - [ ] Implement/TDD search engine
 - [ ] Implement/TDD cli
 - [ ] Improve Search Algorithm, CLI, etc

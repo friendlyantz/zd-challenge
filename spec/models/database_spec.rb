@@ -37,4 +37,44 @@ describe Models::Database do
       end
     end
   end
+
+  describe 'index and search' do
+    describe '#search_index' do
+      it 'returns the value or an empty array when provided record does not exist' do
+        db = described_class.new(some_object: { 'index' => { 'some_key_for_trie' => { 'some_other_key_trie' => [777] } } })
+        expect(db.search_index(record: :some_object, paths: %w[some_key_for_trie some_other_key_trie])).to eq [777]
+        expect(db.search_index(record: :some_object, paths: ['is_admin', false])).to eq []
+        expect(db.search_index(record: :non_existent, paths: %w[some_key_for_trie some_other_key_trie])).to eq []
+      end
+    end
+
+    describe '#add_index' do
+      context 'when initial data is empty' do
+        let(:db) { described_class.new({}) }
+
+        it 'updates the index within the data with the provided record, paths, and index' do
+          db.add_index(record: :some_record, paths: %w[trie_key_one trie_key_two], index: 777)
+          expect(db.data).to match({ some_record: { 'index' => { 'trie_key_one' => { 'trie_key_two' => [777] } } } })
+        end
+      end
+
+      context 'when initial data is not empty' do
+        let(:db) do
+          described_class.new({ some_record: { 'index' => { 'trie_key_one' => { 'trie_key_two' => [25] } } } })
+        end
+
+        it 'append the index within the data with the provided record, paths, and index' do
+          db.add_index(record: :some_record, paths: %w[trie_key_one trie_key_two], index: 777)
+          db.add_index(record: :some_record, paths: %w[trie_key_one another_trie_key_two], index: 888)
+          expect(db.data).to match(
+            { some_record: { 'index' => { 'trie_key_one' =>
+              {
+                'trie_key_two' => [25, 777],
+                'another_trie_key_two' => [888]
+              } } } }
+          )
+        end
+      end
+    end
+  end
 end
