@@ -19,3 +19,5 @@ end
 group :test, :development do
   gem 'pry', '~> 0.14.2'
 end
+
+gem 'dry-monads', '~> 1.6'
