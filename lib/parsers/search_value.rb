@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-# require 'dry/monads' # might be require for incl Dry..
-
 module Parsers
   class SearchValue
     class << self

@@ -65,7 +65,7 @@ describe Repo, type: :integration do
 
   describe '#search' do
     subject(:search_results) do
-      Repo
+      described_class
         .new(Models::Database.new(db_data, schema))
         .search(record:, search_term:, value:)
     end
@@ -85,9 +85,9 @@ describe Repo, type: :integration do
         let(:record) { 'users' }
         let(:search_term) { '_id' }
         let(:value) { 1 }
+        let(:expected_tickets) { [Models::Ticket.new(ticket_one)] }
 
         it 'returns Success monad with correct data' do
-          expected_tickets = [Models::Ticket.new(ticket_one)]
           expect(search_results).to be_a Dry::Monads::Result::Success
           expect(search_results.value!).to all(be_a(Models::User))
           expect(search_results.value!.size).to eq 1

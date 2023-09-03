@@ -59,7 +59,7 @@ describe Parsers::SearchValue do
         let(:value) { 'true' }
 
         it 'returns true as boolean' do
-          expect(call.value!).to eq(true)
+          expect(call.value!).to be(true)
         end
       end
 
@@ -67,7 +67,7 @@ describe Parsers::SearchValue do
         let(:value) { 'false' }
 
         it 'returns false as boolean' do
-          expect(call.value!).to eq(false)
+          expect(call.value!).to be(false)
         end
       end
 
@@ -75,7 +75,7 @@ describe Parsers::SearchValue do
         let(:value) { true }
 
         it 'returns true as boolean' do
-          expect(call.value!).to eq(true)
+          expect(call.value!).to be(true)
         end
       end
 
@@ -83,7 +83,7 @@ describe Parsers::SearchValue do
         let(:value) { false }
 
         it 'returns false as boolean' do
-          expect(call.value!).to eq(false)
+          expect(call.value!).to be(false)
         end
       end
     end

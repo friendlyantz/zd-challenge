@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'dry/monads' # FIXME: cant use zeitwerk here somehow # might be require for incl Dry..
-require 'dry/transaction' # FIXME: cant use zeitwerk here somehow # might be require for incl Dry..
+require 'dry/monads'
+require 'dry/transaction'
 
 class Services::FetchSchema
   include Dry::Monads[:try, :result]

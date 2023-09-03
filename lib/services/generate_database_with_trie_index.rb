@@ -1,9 +1,5 @@
 # frozen_string_literal: true
 
-require File.join(__dir__, '../../db/schema')
-# require 'time'
-# require 'dry/monads' # might be require for incl Dry..
-
 DEFAULT_GETTER = ->(record) { Services::FetchSchema.new.call(record:) }
 
 class Services::GenerateDatabaseWithTrieIndex

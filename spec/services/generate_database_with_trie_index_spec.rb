@@ -114,7 +114,7 @@ describe Services::GenerateDatabaseWithTrieIndex do
     end
 
     it 'returns a Success' do
-      expect(database.success?).to eq true
+      expect(database.success?).to be true
     end
 
     # rubocop:disable Style/SingleArgumentDig

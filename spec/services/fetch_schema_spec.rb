@@ -13,7 +13,7 @@ describe Services::FetchSchema do
     expect(schema.value!).to eq Schema::ORGANIZATIONS
   end
 
-  it 'returns Success monad with correct schema for organisation record' do
+  it 'returns Success monad with correct schema for tickets record' do
     schema =  described_class.new.call(record: 'tickets')
     expect(schema).to be_a Dry::Monads::Result::Success
     expect(schema.value!).to eq Schema::TICKETS
@@ -25,7 +25,7 @@ describe Services::FetchSchema do
   end
 
   context 'when not able to find the schema' do
-    it 'returns Failure monad ' do
+    it 'returns Failure monad' do
       allow(Schema).to receive(:const_get).and_raise
       schema = described_class.new.call(record: 'tickets')
       expect(schema).to be_a Dry::Monads::Result::Failure

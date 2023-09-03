@@ -3,7 +3,7 @@
 describe Models::Database do
   describe '#add_schema' do
     it 'adds schema' do
-      db = Models::Database.new
+      db = described_class.new
       db.add_schema(record: 'some_record', schema: { id: { type: 'String' } })
       expect(db.schema).to eq({ 'some_record' => { id: { type: 'String' } } })
     end
@@ -11,16 +11,16 @@ describe Models::Database do
 
   describe '#get_record' do
     it 'returns value of the record or nil for non-existebt object or keys' do
-      db = Models::Database.new({ some_object: { 'column_name' => 777 } })
+      db = described_class.new({ some_object: { 'column_name' => 777 } })
       expect(db.get_record(record: :some_object, key: 'column_name')).to eq 777
-      expect(db.get_record(record: 'some_object', key: 'column_name')).to eq nil
-      expect(db.get_record(record: :some_object, key: 2)).to eq nil
+      expect(db.get_record(record: 'some_object', key: 'column_name')).to be_nil
+      expect(db.get_record(record: :some_object, key: 2)).to be_nil
     end
   end
 
   describe '#add_record' do
     context 'when db is empty' do
-      let(:db) { Models::Database.new({}) }
+      let(:db) { described_class.new({}) }
 
       it 'add new records' do
         db.add_record(record: :some_object, key: 'new_key', value: { new: 'key' })
@@ -29,7 +29,7 @@ describe Models::Database do
     end
 
     context 'when db has records' do
-      let(:db) { Models::Database.new(some_object: { 'existing_key' => { existing: 'key' } }) }
+      let(:db) { described_class.new(some_object: { 'existing_key' => { existing: 'key' } }) }
 
       it 'overrides existing data' do
         db.add_record(record: :some_object, key: 'existing_key', value: { overriden: 'value' })

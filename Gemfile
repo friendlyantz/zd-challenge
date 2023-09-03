@@ -23,3 +23,5 @@ end
 gem 'dry-monads', '~> 1.6'
 
 gem 'dry-transaction', '~> 0.15.0'
+
+gem 'rubocop-rspec', '~> 2.23'
