@@ -1,9 +1,7 @@
 # frozen_string_literal: true
 
-describe Services::GenerateDatabaseWithTrieIndex do
+describe Services::GenerateDatabase do
   describe '#call' do
-    # include Dry::Monads[:result]
-
     subject(:database) { described_class.call(input) }
 
     let(:input) do

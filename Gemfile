@@ -20,8 +20,8 @@ group :test, :development do
   gem 'pry', '~> 0.14.2'
 end
 
-gem 'dry-monads', '~> 1.6'
+gem 'dry-monads', '< 1.4'
 
-gem 'dry-transaction', '~> 0.15.0'
+gem 'dry-transaction'
 
 gem 'rubocop-rspec', '~> 2.23'

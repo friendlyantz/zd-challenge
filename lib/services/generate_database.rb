@@ -2,7 +2,7 @@
 
 DEFAULT_GETTER = ->(record) { Services::FetchSchema.new.call(record:) }
 
-class Services::GenerateDatabaseWithTrieIndex
+class Services::GenerateDatabase
   @database = nil
 
   class << self
