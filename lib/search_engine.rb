@@ -39,6 +39,10 @@ class SearchEngine
     @repo = repo
   end
 
+  def list_records
+    repo.list_records
+  end
+
   def search_for(record:, search_term:, value:)
     schema = yield Services::FetchSchema.new.call(record:)
     yield Validators::SearchTerm.call(possible_terms: schema.keys, search_term:)

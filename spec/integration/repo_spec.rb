@@ -177,5 +177,13 @@ describe Repo, type: :integration do
         end
       end
     end
+
+    describe '#list_records' do
+      it 'returns a Success monad with all the records' do
+        list_records = Repo.new( Models::Database.new(db_data, schema) ).list_records
+        expect(list_records).to be_a Dry::Monads::Result::Success
+        expect(list_records.value!).to eq ['users', 'organizations', 'tickets']
+      end
+    end
   end
 end

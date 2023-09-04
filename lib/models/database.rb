@@ -34,6 +34,10 @@ class Models::Database
     data.dig(record, 'index', *paths).to_a
   end
 
+  def list_records
+    data.keys
+  end
+
   private
 
   def recursive_insert(keys, value, trie = data)

@@ -77,5 +77,14 @@ describe Models::Database do
         end
       end
     end
+
+    describe '#list_records' do
+      it 'returns the keys of the hash data' do
+        expect( described_class.new({
+          some_record: { 1 => 777 },
+          another_record: { 1 => 777 }
+        }).list_records ).to eq([:some_record, :another_record])
+      end
+    end
   end
 end

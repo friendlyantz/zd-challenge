@@ -11,9 +11,12 @@ class Repo
     @database = database
   end
 
+  def list_records
+    Try { database.list_records }.to_result
+  end
+
   def search(record:, search_term:, value:)
     Try do
-      # ['users', 'organizations', 'tickets'].include?(record) # TODO refac Try?
       method("search_#{record}")
         .call(search_term, value)
         .then { |results| method("search_#{record}_associations").call(results) }

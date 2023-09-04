@@ -216,4 +216,12 @@ describe SearchEngine do
       expect(search_for.value!.size).to eq 2
     end
   end
+
+  describe '#list_records' do
+    it 'returns a Success monad with a list of available objects' do
+      list_records = search_engine.value!.list_records
+      expect(list_records).to be_a Dry::Monads::Result::Success
+      expect(list_records.value!).to eq(['users', 'organizations', 'tickets'])
+    end
+  end
 end
