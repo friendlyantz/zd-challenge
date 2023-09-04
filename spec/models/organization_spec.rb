@@ -16,4 +16,16 @@ describe Models::Organization do
       expect(organization.linked_users).to eq %w[friendlyantz unclebob prime]
     end
   end
+
+  describe '#to_s' do
+    let(:decorator) do
+      ->(organization) { "organization has id of #{organization._id}" }
+    end
+
+    it 'returns the decorated_version' do
+      expect(
+        described_class.new({ _id: 123 }).to_s(decorator)
+      ).to eq 'organization has id of 123'
+    end
+  end
 end

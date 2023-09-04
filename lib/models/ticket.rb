@@ -17,5 +17,9 @@ module Models
         )
       )
     end
+
+    def to_s(decorator = Decorators::Ticket)
+      decorator.call(self)
+    end
   end
 end

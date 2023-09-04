@@ -16,5 +16,9 @@ module Models
         )
       )
     end
+
+    def to_s(decorator = Decorators::Organization)
+      decorator.call(self)
+    end
   end
 end

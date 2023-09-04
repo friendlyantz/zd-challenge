@@ -18,4 +18,17 @@ describe Models::User do
       expect(user.linked_organization).to eq 'ladida'
     end
   end
+
+  describe '#to_s' do
+    let(:user) { described_class.new({ _id: 800 }) }
+    let(:decorated_user) { user.to_s(decorator) }
+
+    let(:decorator) do
+      ->(user) { "user has id of #{user._id}" }
+    end
+
+    it 'returns the decorated_version' do
+      expect(decorated_user).to eq 'user has id of 800'
+    end
+  end
 end

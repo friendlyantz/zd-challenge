@@ -18,4 +18,16 @@ describe Models::Ticket do
       expect(ticket.linked_organization).to eq 'ZenDesk'
     end
   end
+
+  describe '#to_s' do
+    let(:decorator) do
+      ->(ticket) { "ticket has id of #{ticket._id}" }
+    end
+
+    it 'returns the decorated_version' do
+      expect(
+        described_class.new({ _id: 123 }).to_s(decorator)
+      ).to eq 'ticket has id of 123'
+    end
+  end
 end
