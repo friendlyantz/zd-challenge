@@ -24,6 +24,10 @@ test:
 lint:
 	bundle exec rubocop -a
 
+.PHONY: lint-unsafe
+lint-unsafe:
+	bundle exec rubocop -A
+
 .PHONY: usage
 usage:
 	@echo
@@ -34,4 +38,5 @@ usage:
 	@echo "${YELLOW}make install${NC}                  install dependencies"
 	@echo "${YELLOW}make test${NC}                     run tests"
 	@echo "${YELLOW}make lint${NC}                     lint app"
+	@echo "${YELLOW}make lint-unsafe${NC}              lint app(UNSAFE)"
 	@echo
