@@ -1,3 +1,4 @@
+require "super_diff/rspec"
 require "zeitwerk"
 
 loader = Zeitwerk::Loader.new

@@ -25,3 +25,5 @@ gem 'dry-monads', '< 1.4'
 gem 'dry-transaction'
 
 gem 'rubocop-rspec', '~> 2.23'
+
+gem "super_diff", "~> 0.10.0", :group => :test
