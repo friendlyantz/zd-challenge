@@ -6,6 +6,10 @@ Style/Documentation:
 Metrics/BlockLength:
   Enabled: false
 
+Metrics/AbcSize:
+  Exclude:
+    - 'lib/decorators/*'
+
 Style/ClassAndModuleChildren:
   Enabled: false
 

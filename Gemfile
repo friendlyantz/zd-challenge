@@ -10,6 +10,7 @@ gem 'zeitwerk', '~> 2.6'
 
 group :test do
   gem 'rspec', '~> 3.12'
+  gem 'super_diff', '~> 0.10.0'
 end
 
 group :development do
@@ -18,12 +19,9 @@ end
 
 group :test, :development do
   gem 'pry', '~> 0.14.2'
+  gem 'rubocop-rspec', '~> 2.23'
 end
 
 gem 'dry-monads', '< 1.4'
 
 gem 'dry-transaction'
-
-gem 'rubocop-rspec', '~> 2.23'
-
-gem "super_diff", "~> 0.10.0", :group => :test
