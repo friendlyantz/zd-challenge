@@ -221,7 +221,42 @@ describe SearchEngine do
     it 'returns a Success monad with a list of available objects' do
       list_records = search_engine.value!.list_records
       expect(list_records).to be_a Dry::Monads::Result::Success
-      expect(list_records.value!).to eq(['users', 'organizations', 'tickets'])
+      expect(list_records.value!).to eq(%w[users organizations tickets])
+    end
+  end
+
+  describe '#get_possible_terms_for' do
+    it 'returns a Success with a corrects search terms / keys' do
+      possible_terms = search_engine.value!.get_possible_terms_for(record: 'users')
+      expect(possible_terms).to be_a Dry::Monads::Result::Success
+      expect(possible_terms.value!).to eq(Schema::USERS.keys)
+    end
+
+    it 'returns a Failure for unkown record' do
+      possible_terms = search_engine.value!.get_possible_terms_for(record: 'REusers')
+      expect(possible_terms.failure).to be_a Errors::UnknownSchema
+    end
+  end
+
+  describe '#validate_search_term' do
+    it 'returns a Failure for unkown record' do
+      expect(
+        search_engine.value!.validate_search_term(record: 'unkown_record', search_term: 'url')
+        .failure
+      ).to be_a Errors::UnknownSchema
+    end
+
+    it 'returns a Failure for unkown term' do
+      expect(
+        search_engine.value!.validate_search_term(record: 'users', search_term: 'unkown_key')
+        .failure
+      ).to be_a Errors::UnknownSearchTerm
+    end
+
+    it 'returns a Success for valid term' do
+      expect(
+        search_engine.value!.validate_search_term(record: 'users', search_term: 'url')
+      ).to be_a Dry::Monads::Result::Success
     end
   end
 end

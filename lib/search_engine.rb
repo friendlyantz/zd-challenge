@@ -43,6 +43,16 @@ class SearchEngine
     repo.list_records
   end
 
+  def get_possible_terms_for(record:)
+    Services::FetchSchema.new.call(record:).fmap(&:keys)
+  end
+
+  def validate_search_term(record:, search_term:)
+    get_possible_terms_for(record:).bind do |possible_terms|
+      Validators::SearchTerm.call(possible_terms:, search_term:)
+    end
+  end
+
   def search_for(record:, search_term:, value:)
     schema = yield Services::FetchSchema.new.call(record:)
     yield Validators::SearchTerm.call(possible_terms: schema.keys, search_term:)
