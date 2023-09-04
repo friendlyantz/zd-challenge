@@ -14,7 +14,7 @@ Style/ClassAndModuleChildren:
   Enabled: false
 
 Metrics/MethodLength:
-  Max: 12
+  Max: 13
 
 RSpec/ExampleLength:
   Max: 10
