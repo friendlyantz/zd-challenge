@@ -1,8 +1,7 @@
 # frozen_string_literal: true
 
 require 'json'
-# require 'dry/monads'
-require 'dry/monads/do' # TODO: may be refac to TRY
+require 'dry/monads/do'
 
 class SearchEngine
   include Dry::Monads[:try, :result]
