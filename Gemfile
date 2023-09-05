@@ -25,3 +25,5 @@ end
 gem 'dry-monads', '< 1.4'
 
 gem 'dry-transaction'
+
+gem 'colorize', '~> 1.1'

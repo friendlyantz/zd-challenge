@@ -20,6 +20,10 @@ install:
 test:
 	bundle exec rspec
 
+.PHONY: run
+run:
+	bundle exec run bin/run
+
 .PHONY: lint
 lint:
 	bundle exec rubocop -a
@@ -37,6 +41,7 @@ usage:
 	@echo
 	@echo "${YELLOW}make install${NC}                  install dependencies"
 	@echo "${YELLOW}make test${NC}                     run tests"
+	@echo "${YELLOW}make run${NC}                      launch app"
 	@echo "${YELLOW}make lint${NC}                     lint app"
 	@echo "${YELLOW}make lint-unsafe${NC}              lint app(UNSAFE)"
 	@echo
