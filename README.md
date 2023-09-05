@@ -156,6 +156,8 @@ https://refactoring.guru/design-patterns
 - `Decorators` - data decorators for models that can be used to display data in a user friendly way, rewrtiting default Ruby `to_s` method used in `puts`
 - `Renderer` - STDOUT Printer used by App
 
+![image](https://github.com/friendlyantz/zendesk-challenge/assets/70934030/3ba4e04f-27bc-40a4-8467-8fbd1796cd0b)
+
 ## Misc
 
 ### RSpec - testing framework
