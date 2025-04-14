@@ -1,3 +1,7 @@
+CLI Tool to model and search support tickets, users and organizations. 
+This is andexperiment to learn Repository pattern, functional style and Monads with non conventional ruby tools like dry-rb 
+
+
 * [ℹ️GitHub Pages WEB view of this readme](https://friendlyantz.github.io/zd-challenge/)
 {:toc}
 
