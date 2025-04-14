@@ -1,4 +1,4 @@
-* [ℹ️GitHub Pages WEB view of this readme](https://friendlyantz.github.io/zendesk-challenge/)
+* [ℹ️GitHub Pages WEB view of this readme](https://friendlyantz.github.io/zd-challenge/)
 {:toc}
 
 # Installation and Usage
@@ -10,7 +10,7 @@ Refer `Makefile` for installation and usage instructions => in terminal just run
 ```sh
 $ make
 _____________________________________________
-Hi friendlyantz! Welcome to zendesk-challenge
+Hi friendlyantz! Welcome to zd-challenge
 
 Getting started
 
@@ -76,7 +76,7 @@ application
 
 UNIX style approach to CLI tool design to enable leveraging `GNU Parallel` / etc if required:
 
-![image](https://github.com/friendlyantz/zendesk-challenge/assets/70934030/5153b245-210c-4829-a5ee-57d04bbbe4f8)
+![image](https://github.com/friendlyantz/zd-challenge//assets/70934030/5153b245-210c-4829-a5ee-57d04bbbe4f8)
 
 Inspired by [what makes a good CLI tool](https://friendlyantz.me/learning/2023-08-25-what-makes-a-good-cli-tool/)
 
@@ -101,7 +101,7 @@ Inspired by [what makes a good CLI tool](https://friendlyantz.me/learning/2023-0
 - UX allows to search for case insensitive values
 ## Schema
 
-![image](https://github.com/friendlyantz/zendesk-challenge/assets/70934030/c680cce2-0155-465c-94f6-328de52b01e4)
+![image](https://github.com/friendlyantz/zd-challenge//assets/70934030/c680cce2-0155-465c-94f6-328de52b01e4)
 https://dbdiagram.io/d/64f2c16402bd1c4a5ed6532a
 
 ## SearchEngine performance: O(n) vs O(logn) vs O(1) considerations
@@ -178,7 +178,7 @@ https://refactoring.guru/design-patterns
 - `Decorators` - data decorators for models that can be used to display data in a user friendly way, rewrtiting default Ruby `to_s` method used in `puts`
 - `Renderer` - STDOUT Printer used by App
 
-![image](https://github.com/friendlyantz/zendesk-challenge/assets/70934030/3ba4e04f-27bc-40a4-8467-8fbd1796cd0b)
+![image](https://github.com/friendlyantz/zd-challenge//assets/70934030/3ba4e04f-27bc-40a4-8467-8fbd1796cd0b)
 
 ## Misc / Libraries and Gems used
 
